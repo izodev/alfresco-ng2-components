@@ -29,7 +29,6 @@ import { ContextMenuModule } from './context-menu/context-menu.module';
 import { DataColumnModule } from './data-column/data-column.module';
 import { DataTableModule } from './datatable/datatable.module';
 import { InfoDrawerModule } from './info-drawer/info-drawer.module';
-import { LanguageMenuModule } from './language-menu/language-menu.module';
 import { LoginModule } from './login/login.module';
 import { PaginationModule } from './pagination/pagination.module';
 import { HostSettingsModule } from './settings/host-settings.module';
@@ -79,6 +78,7 @@ import { UploadService } from './services/upload.service';
 import { UserPreferencesService } from './services/user-preferences.service';
 import { SearchConfigurationService } from './services/search-configuration.service';
 import { startupServiceFactory } from './services/startup-service-factory';
+import { LanguageMenuComponent } from './language-menu/language-menu.component';
 
 export function createTranslateLoader(http: HttpClient, logService: LogService) {
     return new TranslateLoaderService(http, logService);
@@ -146,7 +146,6 @@ export function providers() {
         FormModule,
         CommentsModule,
         LoginModule,
-        LanguageMenuModule,
         InfoDrawerModule,
         DataColumnModule,
         DataTableModule,
@@ -156,7 +155,9 @@ export function providers() {
                 useFactory: (createTranslateLoader),
                 deps: [HttpClient, LogService]
             }
-        })
+        }),
+
+        LanguageMenuComponent
     ],
     exports: [
         ViewerModule,
@@ -180,11 +181,12 @@ export function providers() {
         FormModule,
         CommentsModule,
         LoginModule,
-        LanguageMenuModule,
         InfoDrawerModule,
         DataColumnModule,
         DataTableModule,
-        TranslateModule
+        TranslateModule,
+
+        LanguageMenuComponent
     ]
 })
 export class CoreModuleLazy {
@@ -213,7 +215,6 @@ export class CoreModuleLazy {
         FormModule,
         CommentsModule,
         LoginModule,
-        LanguageMenuModule,
         InfoDrawerModule,
         DataColumnModule,
         DataTableModule,
@@ -224,6 +225,9 @@ export class CoreModuleLazy {
                 deps: [HttpClient, LogService]
             }
         })
+    ],
+    declarations: [
+        LanguageMenuComponent
     ],
     exports: [
         ViewerModule,
@@ -247,11 +251,12 @@ export class CoreModuleLazy {
         FormModule,
         CommentsModule,
         LoginModule,
-        LanguageMenuModule,
         InfoDrawerModule,
         DataColumnModule,
         DataTableModule,
-        TranslateModule
+        TranslateModule,
+
+        LanguageMenuComponent
     ],
     providers: [
         ...providers(),
