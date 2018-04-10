@@ -22,7 +22,7 @@ export * from './userinfo/userinfo.module';
 export * from './toolbar/toolbar.module';
 export * from './settings/host-settings.module';
 export * from './pagination/pagination.module';
-export * from './login/login.module';
+
 export * from './info-drawer/info-drawer.module';
 export * from './data-column/data-column.module';
 export * from './datatable/datatable.module';
@@ -41,7 +41,6 @@ export * from './userinfo';
 export * from './toolbar';
 export * from './settings';
 export * from './pagination';
-export * from './login';
 export * from './info-drawer';
 export * from './sidebar';
 export * from './data-column';
@@ -65,3 +64,10 @@ export * from './events';
 export * from './mock';
 
 export * from './language-menu/language-menu.component';
+// Login
+export * from './login/directives/login-header.directive';
+export * from './login/directives/login-footer.directive';
+export * from './login/components/login.component';
+export * from './login/models/login-error.event';
+export * from './login/models/login-submit.event';
+export * from './login/models/login-success.event';
