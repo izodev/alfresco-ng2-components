@@ -31,7 +31,6 @@ import { SearchModule } from './search/search.module';
 import { SitesDropdownModule } from './site-dropdown/sites-dropdown.module';
 import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
 import { VersionManagerModule } from './version-manager/version-manager.module';
-import { ContentNodeSelectorModule } from './content-node-selector/content-node-selector.module';
 import { ContentDirectiveModule } from './directives/content-directive.module';
 import { DialogModule } from './dialogs/dialog.module';
 import { FolderDirectiveModule } from './folder-directive/folder-directive.module';
@@ -44,6 +43,11 @@ import { ContentMetadataConfigFactory } from './content-metadata/services/config
 import { BasicPropertiesService } from './content-metadata/services/basic-properties.service';
 import { PropertyGroupTranslatorService } from './content-metadata/services/property-groups-translator.service';
 import { SearchQueryBuilderService } from './search/search-query-builder.service';
+import { ContentNodeSelectorPanelComponent } from './content-node-selector/content-node-selector-panel.component';
+import { NameLocationCellComponent } from './content-node-selector/name-location-cell/name-location-cell.component';
+import { ContentNodeSelectorComponent } from './content-node-selector/content-node-selector.component';
+import { ContentNodeSelectorService } from './content-node-selector/content-node-selector.service';
+import { ContentNodeDialogService } from './content-node-selector/content-node-dialog.service';
 
 @NgModule({
     imports: [
@@ -61,7 +65,6 @@ import { SearchQueryBuilderService } from './search/search-query-builder.service
         MaterialModule,
         SitesDropdownModule,
         BreadcrumbModule,
-        ContentNodeSelectorModule,
         ContentMetadataModule,
         FolderDirectiveModule,
         ContentDirectiveModule,
@@ -83,7 +86,19 @@ import { SearchQueryBuilderService } from './search/search-query-builder.service
         ContentMetadataConfigFactory,
         BasicPropertiesService,
         PropertyGroupTranslatorService,
-        SearchQueryBuilderService
+        SearchQueryBuilderService,
+        ContentNodeSelectorService,
+        ContentNodeDialogService
+    ],
+    declarations: [
+        // Content Node Selector
+        ContentNodeSelectorPanelComponent,
+        NameLocationCellComponent,
+        ContentNodeSelectorComponent
+    ],
+    entryComponents: [
+        ContentNodeSelectorPanelComponent,
+        ContentNodeSelectorComponent
     ],
     exports: [
         CoreModule,
@@ -95,13 +110,16 @@ import { SearchQueryBuilderService } from './search/search-query-builder.service
         SearchModule,
         SitesDropdownModule,
         BreadcrumbModule,
-        ContentNodeSelectorModule,
         ContentMetadataModule,
         DialogModule,
         FolderDirectiveModule,
         ContentDirectiveModule,
         PermissionManagerModule,
-        VersionManagerModule
+        VersionManagerModule,
+        // Content Node Selector
+        ContentNodeSelectorPanelComponent,
+        NameLocationCellComponent,
+        ContentNodeSelectorComponent
     ]
 })
 export class ContentModule {

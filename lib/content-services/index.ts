@@ -26,7 +26,6 @@ export * from './search/search.module';
 export * from './site-dropdown/sites-dropdown.module';
 export * from './breadcrumb/breadcrumb.module';
 export * from './version-manager/version-manager.module';
-export * from './content-node-selector/content-node-selector.module';
 export * from './dialogs/dialog.module';
 export * from './folder-directive/folder-directive.module';
 export * from './content-metadata/content-metadata.module';
@@ -43,7 +42,14 @@ export * from './search';
 export * from './site-dropdown';
 export * from './breadcrumb';
 export * from './version-manager';
-export * from './content-node-selector';
+
+export * from './content-node-selector/name-location-cell/name-location-cell.component';
+export * from './content-node-selector/content-node-selector.component-data.interface';
+export * from './content-node-selector/content-node-selector-panel.component';
+export * from './content-node-selector/content-node-selector.component';
+export * from './content-node-selector/content-node-selector.service';
+export * from './content-node-selector/content-node-dialog.service';
+
 export * from './dialogs';
 export * from './folder-directive';
 export * from './content-metadata';
