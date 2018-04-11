@@ -25,10 +25,12 @@ export * from './search/search.module';
 export * from './version-manager/version-manager.module';
 export * from './dialogs/dialog.module';
 export * from './content-metadata/content-metadata.module';
-export * from './directives/content-directive.module';
 export * from './permission-manager/permission-manager.module';
 
-export * from './directives';
+export * from './directives/node-download.directive';
+export * from './directives/node-share.directive';
+export * from './directives/node-lock.directive';
+
 export * from './social';
 export * from './tag';
 export * from './webscript';

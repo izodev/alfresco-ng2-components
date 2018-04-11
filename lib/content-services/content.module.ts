@@ -28,7 +28,6 @@ import { WebScriptModule } from './webscript/webscript.module';
 import { UploadModule } from './upload/upload.module';
 import { SearchModule } from './search/search.module';
 import { VersionManagerModule } from './version-manager/version-manager.module';
-import { ContentDirectiveModule } from './directives/content-directive.module';
 import { DialogModule } from './dialogs/dialog.module';
 import { ContentMetadataModule } from './content-metadata/content-metadata.module';
 import { PermissionManagerModule } from './permission-manager/permission-manager.module';
@@ -61,6 +60,9 @@ import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.co
 import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component';
 import { FolderCreateDirective } from './folder-directive/folder-create.directive';
 import { FolderEditDirective } from './folder-directive/folder-edit.directive';
+import { NodeDownloadDirective } from './directives/node-download.directive';
+import { NodeSharedDirective } from './directives/node-share.directive';
+import { NodeLockDirective } from './directives/node-lock.directive';
 
 @NgModule({
     imports: [
@@ -76,7 +78,6 @@ import { FolderEditDirective } from './folder-directive/folder-edit.directive';
         UploadModule,
         MaterialModule,
         ContentMetadataModule,
-        ContentDirectiveModule,
         PermissionManagerModule,
         VersionManagerModule
     ],
@@ -126,7 +127,11 @@ import { FolderEditDirective } from './folder-directive/folder-edit.directive';
         DropdownSitesComponent,
         // Folder Directive
         FolderCreateDirective,
-        FolderEditDirective
+        FolderEditDirective,
+        // Content Directives
+        NodeDownloadDirective,
+        NodeSharedDirective,
+        NodeLockDirective
     ],
     entryComponents: [
         ContentNodeSelectorPanelComponent,
@@ -141,7 +146,6 @@ import { FolderEditDirective } from './folder-directive/folder-edit.directive';
         SearchModule,
         ContentMetadataModule,
         DialogModule,
-        ContentDirectiveModule,
         PermissionManagerModule,
         VersionManagerModule,
         // Content Node Selector
@@ -163,7 +167,11 @@ import { FolderEditDirective } from './folder-directive/folder-edit.directive';
         DropdownSitesComponent,
         // Folder Directive
         FolderCreateDirective,
-        FolderEditDirective
+        FolderEditDirective,
+        // Content Directives
+        NodeDownloadDirective,
+        NodeSharedDirective,
+        NodeLockDirective
     ]
 })
 export class ContentModule {
