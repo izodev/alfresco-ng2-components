@@ -30,7 +30,6 @@ import { SearchModule } from './search/search.module';
 import { VersionManagerModule } from './version-manager/version-manager.module';
 import { ContentDirectiveModule } from './directives/content-directive.module';
 import { DialogModule } from './dialogs/dialog.module';
-import { FolderDirectiveModule } from './folder-directive/folder-directive.module';
 import { ContentMetadataModule } from './content-metadata/content-metadata.module';
 import { PermissionManagerModule } from './permission-manager/permission-manager.module';
 import { RatingService } from './social/services/rating.service';
@@ -60,6 +59,8 @@ import { CustomResourcesService } from './document-list/services/custom-resource
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.component';
 import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component';
+import { FolderCreateDirective } from './folder-directive/folder-create.directive';
+import { FolderEditDirective } from './folder-directive/folder-edit.directive';
 
 @NgModule({
     imports: [
@@ -75,7 +76,6 @@ import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component
         UploadModule,
         MaterialModule,
         ContentMetadataModule,
-        FolderDirectiveModule,
         ContentDirectiveModule,
         PermissionManagerModule,
         VersionManagerModule
@@ -123,7 +123,10 @@ import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component
         BreadcrumbComponent,
         DropdownBreadcrumbComponent,
         // Sites Dropdown
-        DropdownSitesComponent
+        DropdownSitesComponent,
+        // Folder Directive
+        FolderCreateDirective,
+        FolderEditDirective
     ],
     entryComponents: [
         ContentNodeSelectorPanelComponent,
@@ -138,7 +141,6 @@ import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component
         SearchModule,
         ContentMetadataModule,
         DialogModule,
-        FolderDirectiveModule,
         ContentDirectiveModule,
         PermissionManagerModule,
         VersionManagerModule,
@@ -158,7 +160,10 @@ import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component
         BreadcrumbComponent,
         DropdownBreadcrumbComponent,
         // Sites Dropdown
-        DropdownSitesComponent
+        DropdownSitesComponent,
+        // Folder Directive
+        FolderCreateDirective,
+        FolderEditDirective
     ]
 })
 export class ContentModule {

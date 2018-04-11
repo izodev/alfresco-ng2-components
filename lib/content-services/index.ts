@@ -24,7 +24,6 @@ export * from './upload/upload.module';
 export * from './search/search.module';
 export * from './version-manager/version-manager.module';
 export * from './dialogs/dialog.module';
-export * from './folder-directive/folder-directive.module';
 export * from './content-metadata/content-metadata.module';
 export * from './directives/content-directive.module';
 export * from './permission-manager/permission-manager.module';
@@ -74,6 +73,9 @@ export * from './content-node-selector/content-node-selector.service';
 export * from './content-node-selector/content-node-dialog.service';
 
 export * from './dialogs';
-export * from './folder-directive';
+
+export * from './folder-directive/folder-create.directive';
+export * from './folder-directive/folder-edit.directive';
+
 export * from './content-metadata';
 export * from './permission-manager';
