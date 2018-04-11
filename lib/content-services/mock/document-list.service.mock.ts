@@ -22,7 +22,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { PageNode } from './document-library.model.mock';
 import { DocumentListService } from '../document-list/services/document-list.service';
-import { NodePaging } from '../document-list/models/document-library.model';
+import { NodePaging } from 'alfresco-js-api';
 
 export class DocumentListServiceMock extends DocumentListService {
 

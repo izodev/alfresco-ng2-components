@@ -17,25 +17,25 @@
 
 import {
     ContentInfo,
-    NodeMinimal,
-    NodeMinimalEntry,
+    Node,
+    NodeEntry,
     NodePaging,
     NodePagingList,
     PathInfoEntity
-} from '../document-list';
+} from 'alfresco-js-api';
 
 export class PageNode extends NodePaging {
-    constructor(entries?: NodeMinimalEntry[]) {
+    constructor(entries?: NodeEntry[]) {
         super();
         this.list = new NodePagingList();
         this.list.entries = entries || [];
     }
 }
 
-export class FileNode extends NodeMinimalEntry {
+export class FileNode extends NodeEntry {
     constructor(name?: string, mimeType?: string) {
         super();
-        this.entry = new NodeMinimal();
+        this.entry = new Node();
         this.entry.id = 'file-id';
         this.entry.isFile = true;
         this.entry.isFolder = false;
@@ -46,10 +46,10 @@ export class FileNode extends NodeMinimalEntry {
     }
 }
 
-export class FolderNode extends NodeMinimalEntry {
+export class FolderNode extends NodeEntry {
     constructor(name?: string) {
         super();
-        this.entry = new NodeMinimal();
+        this.entry = new Node();
         this.entry.id = 'folder-id';
         this.entry.isFile = false;
         this.entry.isFolder = true;
