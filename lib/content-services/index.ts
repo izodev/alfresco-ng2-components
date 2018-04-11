@@ -17,7 +17,6 @@
 
 export * from './content.module';
 
-export * from './social/social.module';
 export * from './tag/tag.module';
 export * from './webscript/webscript.module';
 export * from './upload/upload.module';
@@ -31,7 +30,10 @@ export * from './directives/node-download.directive';
 export * from './directives/node-share.directive';
 export * from './directives/node-lock.directive';
 
-export * from './social';
+export * from './social/rating.component';
+export * from './social/like.component';
+export * from './social/services/rating.service';
+
 export * from './tag';
 export * from './webscript';
 

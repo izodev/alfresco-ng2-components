@@ -22,7 +22,6 @@ import { CoreModule, TRANSLATION_PROVIDER } from '@alfresco/adf-core';
 
 import { MaterialModule } from './material.module';
 
-import { SocialModule } from './social/social.module';
 import { TagModule } from './tag/tag.module';
 import { WebScriptModule } from './webscript/webscript.module';
 import { UploadModule } from './upload/upload.module';
@@ -63,11 +62,12 @@ import { FolderEditDirective } from './folder-directive/folder-edit.directive';
 import { NodeDownloadDirective } from './directives/node-download.directive';
 import { NodeSharedDirective } from './directives/node-share.directive';
 import { NodeLockDirective } from './directives/node-lock.directive';
+import { RatingComponent } from './social/rating.component';
+import { LikeComponent } from './social/like.component';
 
 @NgModule({
     imports: [
         CoreModule,
-        SocialModule,
         TagModule,
         CommonModule,
         WebScriptModule,
@@ -90,7 +90,6 @@ import { NodeLockDirective } from './directives/node-lock.directive';
                 source: 'assets/adf-content-services'
             }
         },
-        RatingService,
         ContentMetadataService,
         PropertyDescriptorsService,
         ContentMetadataConfigFactory,
@@ -105,7 +104,9 @@ import { NodeLockDirective } from './directives/node-lock.directive';
         FolderActionsService,
         DocumentActionsService,
         NodeActionsService,
-        CustomResourcesService
+        CustomResourcesService,
+        // Social
+        RatingService
     ],
     declarations: [
         // Content Node Selector
@@ -131,7 +132,10 @@ import { NodeLockDirective } from './directives/node-lock.directive';
         // Content Directives
         NodeDownloadDirective,
         NodeSharedDirective,
-        NodeLockDirective
+        NodeLockDirective,
+        // Social
+        RatingComponent,
+        LikeComponent
     ],
     entryComponents: [
         ContentNodeSelectorPanelComponent,
@@ -139,7 +143,6 @@ import { NodeLockDirective } from './directives/node-lock.directive';
     ],
     exports: [
         CoreModule,
-        SocialModule,
         TagModule,
         WebScriptModule,
         UploadModule,
@@ -171,7 +174,10 @@ import { NodeLockDirective } from './directives/node-lock.directive';
         // Content Directives
         NodeDownloadDirective,
         NodeSharedDirective,
-        NodeLockDirective
+        NodeLockDirective,
+        // Social
+        RatingComponent,
+        LikeComponent
     ]
 })
 export class ContentModule {

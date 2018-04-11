@@ -15,7 +15,8 @@
  * limitations under the License.
  */
 
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { RatingComponent } from '@alfresco/adf-content-services';
 
 @Component({
     selector: 'app-social',
@@ -23,6 +24,11 @@ import { Component } from '@angular/core';
     styleUrls: ['social.component.scss']
 })
 export class SocialComponent {
+
+    @ViewChild(RatingComponent)
+    set rating(value: RatingComponent) {
+        console.log('rating', value);
+    }
 
     nodeId = '74cd8a96-8a21-47e5-9b3b-a1b3e296787d';
 }
