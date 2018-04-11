@@ -17,7 +17,6 @@
 
 export * from './core.module';
 
-export * from './viewer/viewer.module';
 export * from './userinfo/userinfo.module';
 export * from './toolbar/toolbar.module';
 export * from './settings/host-settings.module';
@@ -36,7 +35,22 @@ export * from './pipes/pipe.module';
 export * from './directives/directive.module';
 export * from './comments/comments.module';
 
-export * from './viewer';
+export * from './viewer/components/viewer.component';
+export * from './viewer/components/imgViewer.component';
+export * from './viewer/components/mediaPlayer.component';
+export * from './viewer/components/pdfViewer.component';
+export * from './viewer/components/pdfViewer-thumbnails.component';
+export * from './viewer/components/pdfViewer-thumb.component';
+export * from './viewer/components/txtViewer.component';
+export * from './viewer/components/unknown-format/unknown-format.component';
+export * from './viewer/components/viewer-more-actions.component';
+export * from './viewer/components/viewer-open-with.component';
+export * from './viewer/components/viewer-sidebar.component';
+export * from './viewer/components/viewer-toolbar.component';
+export * from './viewer/components/viewer-toolbar-actions.component';
+export * from './viewer/components/viewer.component';
+export * from './viewer/directives/viewer-extension.directive';
+
 export * from './userinfo';
 export * from './toolbar';
 export * from './settings';

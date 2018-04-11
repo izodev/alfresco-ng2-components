@@ -27,7 +27,6 @@ import { PdfThumbComponent } from './pdfViewer-thumb.component';
 import { RIGHT_ARROW, LEFT_ARROW } from '@angular/cdk/keycodes';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
-import { ViewerModule } from '../viewer.module';
 
 declare let PDFJS: any;
 
@@ -150,11 +149,11 @@ describe('Test PdfViewer component', () => {
                 RenderingQueueServices
             ]
         })
-            .overrideModule(ViewerModule, {
-                set: {
-                    entryComponents: [TestDialogComponent]
-                }
-            })
+            // .overrideModule(ViewerModule, {
+            //     set: {
+            //         entryComponents: [TestDialogComponent]
+            //     }
+            // })
             .compileComponents();
     }));
 

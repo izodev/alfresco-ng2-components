@@ -33,7 +33,6 @@ import { PaginationModule } from './pagination/pagination.module';
 import { HostSettingsModule } from './settings/host-settings.module';
 import { ToolbarModule } from './toolbar/toolbar.module';
 import { UserInfoModule } from './userinfo/userinfo.module';
-import { ViewerModule } from './viewer/viewer.module';
 import { FormModule } from './form/form.module';
 import { SidenavLayoutModule } from './sidenav-layout/sidenav-layout.module';
 import { SideBarActionModule } from './sidebar/sidebar-action.module';
@@ -81,6 +80,22 @@ import { LanguageMenuComponent } from './language-menu/language-menu.component';
 import { LoginComponent } from './login/components/login.component';
 import { LoginFooterDirective } from './login/directives/login-footer.directive';
 import { LoginHeaderDirective } from './login/directives/login-header.directive';
+import { PdfPasswordDialogComponent } from './viewer/components/pdfViewer-password-dialog';
+import { ViewerComponent } from './viewer/components/viewer.component';
+import { ImgViewerComponent } from './viewer/components/imgViewer.component';
+import { TxtViewerComponent } from './viewer/components/txtViewer.component';
+import { MediaPlayerComponent } from './viewer/components/mediaPlayer.component';
+import { PdfViewerComponent } from './viewer/components/pdfViewer.component';
+import { PdfThumbComponent } from './viewer/components/pdfViewer-thumb.component';
+import { PdfThumbListComponent } from './viewer/components/pdfViewer-thumbnails.component';
+import { ViewerExtensionDirective } from './viewer/directives/viewer-extension.directive';
+import { UnknownFormatComponent } from './viewer/components/unknown-format/unknown-format.component';
+import { ViewerToolbarComponent } from './viewer/components/viewer-toolbar.component';
+import { ViewerSidebarComponent } from './viewer/components/viewer-sidebar.component';
+import { ViewerOpenWithComponent } from './viewer/components/viewer-open-with.component';
+import { ViewerMoreActionsComponent } from './viewer/components/viewer-more-actions.component';
+import { ViewerToolbarActionsComponent } from './viewer/components/viewer-toolbar-actions.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export function createTranslateLoader(http: HttpClient, logService: LogService) {
     return new TranslateLoaderService(http, logService);
@@ -127,7 +142,6 @@ export function providers() {
 
 @NgModule({
     imports: [
-        ViewerModule,
         SidenavLayoutModule,
         SideBarActionModule,
         PipeModule,
@@ -159,7 +173,6 @@ export function providers() {
         })
     ],
     exports: [
-        ViewerModule,
         SideBarActionModule,
         SidenavLayoutModule,
         PipeModule,
@@ -190,7 +203,7 @@ export class CoreModuleLazy {
 
 @NgModule({
     imports: [
-        ViewerModule,
+        FlexLayoutModule,
         SideBarActionModule,
         SidenavLayoutModule,
         PipeModule,
@@ -226,10 +239,28 @@ export class CoreModuleLazy {
         // Login
         LoginComponent,
         LoginFooterDirective,
-        LoginHeaderDirective
+        LoginHeaderDirective,
+        // Viewer
+        PdfPasswordDialogComponent,
+        ViewerComponent,
+        ImgViewerComponent,
+        TxtViewerComponent,
+        MediaPlayerComponent,
+        PdfViewerComponent,
+        PdfThumbComponent,
+        PdfThumbListComponent,
+        ViewerExtensionDirective,
+        UnknownFormatComponent,
+        ViewerToolbarComponent,
+        ViewerSidebarComponent,
+        ViewerOpenWithComponent,
+        ViewerMoreActionsComponent,
+        ViewerToolbarActionsComponent
+    ],
+    entryComponents: [
+        PdfPasswordDialogComponent
     ],
     exports: [
-        ViewerModule,
         SideBarActionModule,
         SidenavLayoutModule,
         PipeModule,
@@ -258,7 +289,23 @@ export class CoreModuleLazy {
         // Login
         LoginComponent,
         LoginFooterDirective,
-        LoginHeaderDirective
+        LoginHeaderDirective,
+        // Viewer
+        PdfPasswordDialogComponent,
+        ViewerComponent,
+        ImgViewerComponent,
+        TxtViewerComponent,
+        MediaPlayerComponent,
+        PdfViewerComponent,
+        PdfThumbComponent,
+        PdfThumbListComponent,
+        ViewerExtensionDirective,
+        UnknownFormatComponent,
+        ViewerToolbarComponent,
+        ViewerSidebarComponent,
+        ViewerOpenWithComponent,
+        ViewerMoreActionsComponent,
+        ViewerToolbarActionsComponent
     ],
     providers: [
         ...providers(),
