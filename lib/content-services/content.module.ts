@@ -27,7 +27,6 @@ import { TagModule } from './tag/tag.module';
 import { WebScriptModule } from './webscript/webscript.module';
 import { UploadModule } from './upload/upload.module';
 import { SearchModule } from './search/search.module';
-import { SitesDropdownModule } from './site-dropdown/sites-dropdown.module';
 import { VersionManagerModule } from './version-manager/version-manager.module';
 import { ContentDirectiveModule } from './directives/content-directive.module';
 import { DialogModule } from './dialogs/dialog.module';
@@ -60,6 +59,7 @@ import { NodeActionsService } from './document-list/services/node-actions.servic
 import { CustomResourcesService } from './document-list/services/custom-resources.service';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.component';
+import { DropdownSitesComponent } from './site-dropdown/sites-dropdown.component';
 
 @NgModule({
     imports: [
@@ -74,7 +74,6 @@ import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.co
         SearchModule,
         UploadModule,
         MaterialModule,
-        SitesDropdownModule,
         ContentMetadataModule,
         FolderDirectiveModule,
         ContentDirectiveModule,
@@ -122,7 +121,9 @@ import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.co
         NoPermissionContentDirective,
         // Breadcrumb
         BreadcrumbComponent,
-        DropdownBreadcrumbComponent
+        DropdownBreadcrumbComponent,
+        // Sites Dropdown
+        DropdownSitesComponent
     ],
     entryComponents: [
         ContentNodeSelectorPanelComponent,
@@ -135,7 +136,6 @@ import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.co
         WebScriptModule,
         UploadModule,
         SearchModule,
-        SitesDropdownModule,
         ContentMetadataModule,
         DialogModule,
         FolderDirectiveModule,
@@ -156,7 +156,9 @@ import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.co
         NoPermissionContentDirective,
         // Breadcrumb
         BreadcrumbComponent,
-        DropdownBreadcrumbComponent
+        DropdownBreadcrumbComponent,
+        // Sites Dropdown
+        DropdownSitesComponent
     ]
 })
 export class ContentModule {

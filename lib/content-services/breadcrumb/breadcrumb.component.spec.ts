@@ -20,8 +20,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PathElementEntity } from 'alfresco-js-api';
 import { DataTableModule } from '@alfresco/adf-core';
 import { fakeNodeWithCreatePermission } from '../mock';
-import { CustomResourcesService, DocumentListService, DocumentListComponent } from '../document-list';
 import { BreadcrumbComponent } from './breadcrumb.component';
+import { DocumentListComponent } from '../document-list/components/document-list.component';
+import { DocumentListService } from '../document-list/services/document-list.service';
+import { CustomResourcesService } from '../document-list/services/custom-resources.service';
 
 declare let jasmine: any;
 

@@ -23,17 +23,15 @@ import { SearchService, SitesService } from '@alfresco/adf-core';
 import { DataTableModule } from '@alfresco/adf-core';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
-import {
-    CustomResourcesService,
-    EmptyFolderContentDirective,
-    DocumentListComponent,
-    DocumentListService
-} from '../document-list';
-import { DropdownSitesComponent } from '../site-dropdown';
-import { DropdownBreadcrumbComponent } from '../breadcrumb';
 import { ContentNodeSelectorPanelComponent } from './content-node-selector-panel.component';
 import { ContentNodeSelectorService } from './content-node-selector.service';
 import { NodePaging } from 'alfresco-js-api';
+import { DocumentListComponent } from '../document-list/components/document-list.component';
+import { EmptyFolderContentDirective } from '../document-list/components/empty-folder/empty-folder-content.directive';
+import { DropdownSitesComponent } from '../site-dropdown/sites-dropdown.component';
+import { DropdownBreadcrumbComponent } from '../breadcrumb/dropdown-breadcrumb.component';
+import { CustomResourcesService } from '../document-list/services/custom-resources.service';
+import { DocumentListService } from '../document-list/services/document-list.service';
 
 const ONE_FOLDER_RESULT = {
     list: {
@@ -532,7 +530,7 @@ describe('ContentNodeSelectorComponent', () => {
 
                 expect(component.searchTerm).toBe('');
                 expect(component.folderIdToShow).toBe('namek');
-            });
+            }));
 
             it('should show the current folder\'s content instead of search results if search was not performed', () => {
                 let documentList = fixture.debugElement.query(By.directive(DocumentListComponent));

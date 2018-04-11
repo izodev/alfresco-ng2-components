@@ -20,8 +20,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DataTableModule } from '@alfresco/adf-core';
 import { fakeNodeWithCreatePermission } from '../mock';
-import { CustomResourcesService, DocumentListComponent, DocumentListService } from '../document-list';
 import { DropdownBreadcrumbComponent } from './dropdown-breadcrumb.component';
+import { DocumentListComponent } from '../document-list/components/document-list.component';
+import { DocumentListService } from '../document-list/services/document-list.service';
+import { CustomResourcesService } from '../document-list/services/custom-resources.service';
 
 describe('DropdownBreadcrumb', () => {
 

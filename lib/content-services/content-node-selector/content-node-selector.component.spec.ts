@@ -24,13 +24,11 @@ import { ContentNodeSelectorPanelComponent } from './content-node-selector-panel
 import { ContentNodeSelectorService } from './content-node-selector.service';
 import { MinimalNodeEntryEntity } from 'alfresco-js-api';
 import { By } from '@angular/platform-browser';
-import {
-        EmptyFolderContentDirective,
-        DocumentListComponent,
-        DocumentListService,
-        CustomResourcesService
-    } from '../document-list';
 import { ContentService } from '@alfresco/adf-core';
+import { DocumentListComponent } from '../document-list/components/document-list.component';
+import { EmptyFolderContentDirective } from '../document-list/components/empty-folder/empty-folder-content.directive';
+import { CustomResourcesService } from '../document-list/services/custom-resources.service';
+import { DocumentListService } from '../document-list/services/document-list.service';
 
 describe('ContentNodeSelectorDialogComponent', () => {
 
@@ -54,8 +52,6 @@ describe('ContentNodeSelectorDialogComponent', () => {
                 ContentNodeSelectorPanelComponent,
                 DocumentListService,
                 ContentService,
-                DocumentListService,
-                ContentNodeSelectorService,
                 ...plusProviders
             ],
             schemas: [CUSTOM_ELEMENTS_SCHEMA]

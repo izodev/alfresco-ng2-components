@@ -20,8 +20,9 @@ import {
     SettingsService, LogService, ThumbnailService
 } from '@alfresco/adf-core';
 import { Observable } from 'rxjs/Observable';
-import { NodePaging, DocumentListService } from '../document-list';
 import { PageNode } from './document-library.model.mock';
+import { DocumentListService } from '../document-list/services/document-list.service';
+import { NodePaging } from '../document-list/models/document-library.model';
 
 export class DocumentListServiceMock extends DocumentListService {
 
