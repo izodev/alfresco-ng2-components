@@ -25,7 +25,6 @@ import { MaterialModule } from './material.module';
 import { SocialModule } from './social/social.module';
 import { TagModule } from './tag/tag.module';
 import { WebScriptModule } from './webscript/webscript.module';
-import { DocumentListModule } from './document-list/document-list.module';
 import { UploadModule } from './upload/upload.module';
 import { SearchModule } from './search/search.module';
 import { SitesDropdownModule } from './site-dropdown/sites-dropdown.module';
@@ -48,6 +47,18 @@ import { NameLocationCellComponent } from './content-node-selector/name-location
 import { ContentNodeSelectorComponent } from './content-node-selector/content-node-selector.component';
 import { ContentNodeSelectorService } from './content-node-selector/content-node-selector.service';
 import { ContentNodeDialogService } from './content-node-selector/content-node-dialog.service';
+import { DocumentListComponent } from './document-list/components/document-list.component';
+import { ContentColumnComponent } from './document-list/components/content-column/content-column.component';
+import { ContentColumnListComponent } from './document-list/components/content-column/content-column-list.component';
+import { ContentActionComponent } from './document-list/components/content-action/content-action.component';
+import { ContentActionListComponent } from './document-list/components/content-action/content-action-list.component';
+import { EmptyFolderContentDirective } from './document-list/components/empty-folder/empty-folder-content.directive';
+import { NoPermissionContentDirective } from './document-list/components/no-permission/no-permission-content.directive';
+import { DocumentListService } from './document-list/services/document-list.service';
+import { FolderActionsService } from './document-list/services/folder-actions.service';
+import { DocumentActionsService } from './document-list/services/document-actions.service';
+import { NodeActionsService } from './document-list/services/node-actions.service';
+import { CustomResourcesService } from './document-list/services/custom-resources.service';
 
 @NgModule({
     imports: [
@@ -60,7 +71,6 @@ import { ContentNodeDialogService } from './content-node-selector/content-node-d
         ReactiveFormsModule,
         DialogModule,
         SearchModule,
-        DocumentListModule,
         UploadModule,
         MaterialModule,
         SitesDropdownModule,
@@ -87,14 +97,29 @@ import { ContentNodeDialogService } from './content-node-selector/content-node-d
         BasicPropertiesService,
         PropertyGroupTranslatorService,
         SearchQueryBuilderService,
+        // Content Node Selector
         ContentNodeSelectorService,
-        ContentNodeDialogService
+        ContentNodeDialogService,
+        // Document List
+        DocumentListService,
+        FolderActionsService,
+        DocumentActionsService,
+        NodeActionsService,
+        CustomResourcesService
     ],
     declarations: [
         // Content Node Selector
         ContentNodeSelectorPanelComponent,
         NameLocationCellComponent,
-        ContentNodeSelectorComponent
+        ContentNodeSelectorComponent,
+        // Document List
+        DocumentListComponent,
+        ContentColumnComponent,
+        ContentColumnListComponent,
+        ContentActionComponent,
+        ContentActionListComponent,
+        EmptyFolderContentDirective,
+        NoPermissionContentDirective
     ],
     entryComponents: [
         ContentNodeSelectorPanelComponent,
@@ -105,7 +130,6 @@ import { ContentNodeDialogService } from './content-node-selector/content-node-d
         SocialModule,
         TagModule,
         WebScriptModule,
-        DocumentListModule,
         UploadModule,
         SearchModule,
         SitesDropdownModule,
@@ -119,7 +143,15 @@ import { ContentNodeDialogService } from './content-node-selector/content-node-d
         // Content Node Selector
         ContentNodeSelectorPanelComponent,
         NameLocationCellComponent,
-        ContentNodeSelectorComponent
+        ContentNodeSelectorComponent,
+        // Document List
+        DocumentListComponent,
+        ContentColumnComponent,
+        ContentColumnListComponent,
+        ContentActionComponent,
+        ContentActionListComponent,
+        EmptyFolderContentDirective,
+        NoPermissionContentDirective
     ]
 })
 export class ContentModule {

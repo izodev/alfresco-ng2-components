@@ -26,7 +26,7 @@ import {
     OnInit
 } from '@angular/core';
 import { MinimalNodeEntryEntity, PathElementEntity } from 'alfresco-js-api';
-import { DocumentListComponent } from '../document-list';
+import { DocumentListComponent } from '../document-list/components/document-list.component';
 
 @Component({
     selector: 'adf-breadcrumb',
