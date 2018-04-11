@@ -23,7 +23,6 @@ export * from './webscript/webscript.module';
 export * from './upload/upload.module';
 export * from './search/search.module';
 export * from './site-dropdown/sites-dropdown.module';
-export * from './breadcrumb/breadcrumb.module';
 export * from './version-manager/version-manager.module';
 export * from './dialogs/dialog.module';
 export * from './folder-directive/folder-directive.module';
@@ -61,7 +60,10 @@ export * from './document-list/models/permissions-style.model';
 export * from './upload';
 export * from './search';
 export * from './site-dropdown';
-export * from './breadcrumb';
+
+export * from './breadcrumb/breadcrumb.component';
+export * from './breadcrumb/dropdown-breadcrumb.component';
+
 export * from './version-manager';
 
 export * from './content-node-selector/name-location-cell/name-location-cell.component';

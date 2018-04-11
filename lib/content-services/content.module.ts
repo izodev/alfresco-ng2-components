@@ -28,7 +28,6 @@ import { WebScriptModule } from './webscript/webscript.module';
 import { UploadModule } from './upload/upload.module';
 import { SearchModule } from './search/search.module';
 import { SitesDropdownModule } from './site-dropdown/sites-dropdown.module';
-import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
 import { VersionManagerModule } from './version-manager/version-manager.module';
 import { ContentDirectiveModule } from './directives/content-directive.module';
 import { DialogModule } from './dialogs/dialog.module';
@@ -59,6 +58,8 @@ import { FolderActionsService } from './document-list/services/folder-actions.se
 import { DocumentActionsService } from './document-list/services/document-actions.service';
 import { NodeActionsService } from './document-list/services/node-actions.service';
 import { CustomResourcesService } from './document-list/services/custom-resources.service';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { DropdownBreadcrumbComponent } from './breadcrumb/dropdown-breadcrumb.component';
 
 @NgModule({
     imports: [
@@ -74,7 +75,6 @@ import { CustomResourcesService } from './document-list/services/custom-resource
         UploadModule,
         MaterialModule,
         SitesDropdownModule,
-        BreadcrumbModule,
         ContentMetadataModule,
         FolderDirectiveModule,
         ContentDirectiveModule,
@@ -119,7 +119,10 @@ import { CustomResourcesService } from './document-list/services/custom-resource
         ContentActionComponent,
         ContentActionListComponent,
         EmptyFolderContentDirective,
-        NoPermissionContentDirective
+        NoPermissionContentDirective,
+        // Breadcrumb
+        BreadcrumbComponent,
+        DropdownBreadcrumbComponent
     ],
     entryComponents: [
         ContentNodeSelectorPanelComponent,
@@ -133,7 +136,6 @@ import { CustomResourcesService } from './document-list/services/custom-resource
         UploadModule,
         SearchModule,
         SitesDropdownModule,
-        BreadcrumbModule,
         ContentMetadataModule,
         DialogModule,
         FolderDirectiveModule,
@@ -151,7 +153,10 @@ import { CustomResourcesService } from './document-list/services/custom-resource
         ContentActionComponent,
         ContentActionListComponent,
         EmptyFolderContentDirective,
-        NoPermissionContentDirective
+        NoPermissionContentDirective,
+        // Breadcrumb
+        BreadcrumbComponent,
+        DropdownBreadcrumbComponent
     ]
 })
 export class ContentModule {
