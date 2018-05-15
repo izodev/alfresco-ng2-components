@@ -17,7 +17,7 @@
 
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard, AuthGuardBpm, AuthGuardEcm, AuthGuardSSO} from '@alfresco/adf-core';
+import { AuthGuardBpm, AuthGuardEcm, AuthGuardSSO } from '@alfresco/adf-core';
 import { AppLayoutComponent } from './components/app-layout/app-layout.component';
 import { LoginComponent } from './components/login/login.component';
 import { SettingsComponent } from './components/settings/settings.component';
@@ -58,7 +58,7 @@ export const appRoutes: Routes = [
     {
         path: '',
         component: AppLayoutComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuardSSO],
         children: [
             {
                 path: '',
@@ -201,4 +201,4 @@ export const appRoutes: Routes = [
     }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { initialNavigation: false });

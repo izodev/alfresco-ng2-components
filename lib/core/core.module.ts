@@ -85,6 +85,7 @@ import { UserPreferencesService } from './services/user-preferences.service';
 import { SearchConfigurationService } from './services/search-configuration.service';
 import { startupServiceFactory } from './services/startup-service-factory';
 import { EmptyContentComponent } from './components/empty-content/empty-content.component';
+import { OAuthModule, OAuthService, UrlHelperService } from 'angular-oauth2-oidc';
 
 export function createTranslateLoader(http: HttpClient, logService: LogService) {
     return new TranslateLoaderService(http, logService);
@@ -92,6 +93,8 @@ export function createTranslateLoader(http: HttpClient, logService: LogService) 
 
 export function providers() {
     return [
+        OAuthService,
+        UrlHelperService,
         AuthenticationService,
         AuthenticationSSOService,
         AuthTokenProcessorService,
@@ -135,6 +138,7 @@ export function providers() {
 
 @NgModule({
     imports: [
+        OAuthModule.forRoot(),
         ViewerModule,
         SidenavLayoutModule,
         PipeModule,

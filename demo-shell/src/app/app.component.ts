@@ -18,6 +18,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SettingsService, PageTitleService, StorageService, TranslationService } from '@alfresco/adf-core';
+import { AuthenticationSSOService } from '@alfresco/adf-core';
 
 @Component({
   selector: 'app-root',
@@ -30,10 +31,12 @@ export class AppComponent {
   constructor(private settingsService: SettingsService,
               private storage: StorageService,
               translationService: TranslationService,
+              private authSSOService: AuthenticationSSOService,
               pageTitleService: PageTitleService,
               route: ActivatedRoute) {
     this.setProvider();
     pageTitleService.setTitle();
+    this.authSSOService.loadDiscoveryDocumentAndLogin();
   }
 
   private setProvider() {
