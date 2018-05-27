@@ -24,6 +24,7 @@ import { FolderDialogComponent } from './folder.dialog';
 import { NodeLockDialogComponent } from './node-lock.dialog';
 import { ShareDialogComponent } from './share.dialog';
 import { ConfirmDialogComponent } from './confirm.dialog';
+import { EditUploadedFileComponent } from './edit-uploaded.dialog';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -31,6 +32,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormModule } from '@alfresco/adf-core';
 import { MatDatetimepickerModule } from '@mat-datetimepicker/core';
 import { MatMomentDatetimeModule } from '@mat-datetimepicker/moment';
+
 
 @NgModule({
     imports: [
@@ -48,21 +50,24 @@ import { MatMomentDatetimeModule } from '@mat-datetimepicker/moment';
         FolderDialogComponent,
         NodeLockDialogComponent,
         ShareDialogComponent,
-        ConfirmDialogComponent
+        ConfirmDialogComponent,
+        EditUploadedFileComponent
     ],
     exports: [
         DownloadZipDialogComponent,
         FolderDialogComponent,
         NodeLockDialogComponent,
         ShareDialogComponent,
-        ConfirmDialogComponent
+        ConfirmDialogComponent,
+        EditUploadedFileComponent
     ],
     entryComponents: [
         DownloadZipDialogComponent,
         FolderDialogComponent,
         NodeLockDialogComponent,
         ShareDialogComponent,
-        ConfirmDialogComponent
+        ConfirmDialogComponent,
+        EditUploadedFileComponent
     ]
 })
 export class DialogModule {}

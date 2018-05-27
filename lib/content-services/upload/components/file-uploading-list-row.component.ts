@@ -17,6 +17,8 @@
 
 import { FileModel, FileUploadStatus } from '@alfresco/adf-core';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { EditUploadedFileComponent } from '../../dialogs';
 
 @Component({
     selector: 'adf-file-uploading-list-row',
@@ -24,6 +26,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     styleUrls: [ './file-uploading-list-row.component.scss' ]
 })
 export class FileUploadingListRowComponent {
+    
+    constructor(private dialog: MatDialog) {
+    }
+    
     @Input()
     file: FileModel;
 
@@ -43,6 +49,14 @@ export class FileUploadingListRowComponent {
         this.remove.emit(file);
     }
     onEdit(file: FileModel): void {
-        // TODO open dialog
+        
+            this.dialog.open(EditUploadedFileComponent, {
+                width: '600px',
+                disableClose: true,
+                data: {
+                    file: file
+                }
+            });
+        
     }
 }
