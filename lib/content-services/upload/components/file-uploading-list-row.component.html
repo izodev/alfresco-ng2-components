@@ -26,6 +26,16 @@
             clear
         </mat-icon>
     </div>
+    <div
+        *ngIf="file.status === FileUploadStatus.Complete"     
+        class="adf-file-uploading-row__group-actions"
+        title="{{ 'ADF_FILE_UPLOAD.BUTTON.EDIT_META' | translate }}">
+        <mat-icon
+            mat-list-icon (click)="onEdit(file)"
+            class="adf-file-uploading-row__action adf-file-uploading-row__action--edit">
+            edit
+       </mat-icon>
+    </div>
 
     <div
         *ngIf="file.status === FileUploadStatus.Complete"

@@ -42,4 +42,7 @@ export class FileUploadingListRowComponent {
     onRemove(file: FileModel): void {
         this.remove.emit(file);
     }
+    onEdit(file: FileModel): void {
+        // TODO open dialog
+    }
 }

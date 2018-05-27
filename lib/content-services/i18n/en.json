@@ -111,7 +111,8 @@
       "CLOSE": "Close",
       "CANCEL_ALL": "Cancel uploads",
       "CANCEL_FILE": "Cancel upload",
-      "REMOVE_FILE": "Remove uploaded file"
+      "REMOVE_FILE": "Remove uploaded file",
+      "EDIT_META": "Edit file properties"
     },
     "STATUS": {
       "FILE_CANCELED_STATUS": "Canceled"

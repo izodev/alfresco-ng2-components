@@ -32,7 +32,12 @@
         }
 
         &__group, &__block {
-            min-width: 200px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__group-actions {
+            min-width: 20px;
             display: flex;
             justify-content: flex-end;
         }
@@ -72,6 +77,10 @@
         }
 
         &__action--remove {
+            color: mat-color($accent);
+        }
+
+        &__action--edit {
             color: mat-color($accent);
         }
     }
